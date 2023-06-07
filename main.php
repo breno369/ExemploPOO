@@ -1,28 +1,75 @@
 <?php
 
-include 'pessoa.php';
+class Pessoa
+{
+  //variaveis privada
+  private $nome;
+  private $email;
+  private $tel;
+  private $idade;
+
+//função publica para retornar o valor
+  public function getNome()
+  {
+    return $this->nome; //retorna o valor armazenado na variavel nome
+  }
+//função publica para receber um valor
+  public function setNome($valor)
+  {
+    $this->nome = $valor; //define $valor para dentro da variavel nome
+  }
 
 
-$nome = new Pessoa();
-$nome->setNome("nome");
-$nome->setEmail("exemplo@de.email");
-$nome->setCpf("000-000-000.00");
-$nome->setSenha("369");
-$nome->setTel("(00) 00000-0000");
-$nome->setCep(12345678);
-$nome->setIdade(00);
-$nome->setRg(123456789);
-$nome->setId(16369);
+  public function getEmail()
+  {
+    return $this->email;
+  }
 
-echo"Nome - {$nome -> getNome()}";
-echo"\nEmail - {$nome -> getEmail()}";
-echo"\nCPF - {$nome -> getCpf()}";
-echo"\nSenha - {$nome -> getSenha()}";
-echo"\nTelefone - {$nome -> getTel()}";
-echo"\nCEP - {$nome -> getCep()}";
-echo"\nIdade - {$nome -> getIdade()}";
-echo"\nRG - {$nome -> getRg()}";
-echo"\nId - {$nome -> getId()}";
+  public function setEmail($valor)
+  {
+    $this->email = $valor;
+  }
 
+
+  public function getTel()
+  {
+    return $this->tel;
+  }
+
+  public function setTel($valor)
+  {
+    $this->tel = $valor;
+  }
+
+
+  public function getIdade()
+  {
+    return $this->idade;
+  }
+
+  public function setIdade($valor)
+  {
+    $this->idade = $valor;
+  }
+}
+
+//recebe os dados do form
+$name = $_POST['name'];
+$email = $_POST['email'];
+$cell = $_POST['cell'];
+$age = $_POST['age'];
+
+//cria nova pessoa e coloca os valores recebidos do form na "$pessoa1"
+$pessoa1 = new Pessoa();
+$pessoa1->setNome($name);
+$pessoa1->setEmail($email);
+$pessoa1->setTel($cell);
+$pessoa1->setIdade($age);
+
+//imprime os dados da "$pessoa1"
+echo "Nome - {$pessoa1->getNome()}<br>";
+echo "Email - {$pessoa1->getEmail()}<br>";
+echo "Cell - {$pessoa1->getTel()}<br>";
+echo "Idade - {$pessoa1->getIdade()}";
 
 ?>
