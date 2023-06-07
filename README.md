@@ -1,3 +1,3 @@
 # ExemploPOO
-Exemplo de POO em php
-Este exemplo recebe alguns valores e armazena na classe nome
+Exemplo de POO em php,
+ recebe alguns valores e armazena na classe nome
